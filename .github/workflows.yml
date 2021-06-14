@@ -1,0 +1,50 @@
+
+GET practica_automotriZ/_search
+
+PUT practica_automotriz
+
+PUT practica_automotriz/_mapping
+{ 
+"properties":{
+ "id": {"type": "integer"},
+  "usuario": {"type": "text"},
+  "descripcion": {"type": "text"},
+  "precio": {"type": "integer"},
+  "genero": {"type": "text"}
+} 
+}
+
+POST practica_automotriz/_doc
+{
+"id": 2,
+"usuario":"Ana Perez", 
+"descripcion":"persona fisica",
+"precio":34, 
+"genero":"femenino"
+}
+
+
+GET practica_automotriz/_search
+
+
+
+
+
+
+
+
+
+GET /practica_automotriz/_search?pretty
+{
+
+  "profile": true,
+
+  "query" : {
+
+    "match" : { "genero" : "femenino" }
+
+  }
+
+}
+
+
